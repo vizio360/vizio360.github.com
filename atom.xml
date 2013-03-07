@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Vizio 360]]></title>
+  <link href="http://vizio360.github.com/atom.xml" rel="self"/>
+  <link href="http://vizio360.github.com/"/>
+  <updated>2013-03-07T23:24:41+00:00</updated>
+  <id>http://vizio360.github.com/</id>
+  <author>
+    <name><![CDATA[Simone Vicentini]]></name>
+    <email><![CDATA[simone.vicentini@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>
