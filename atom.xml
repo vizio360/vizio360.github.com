@@ -4,7 +4,7 @@
   <title><![CDATA[Vizio 360]]></title>
   <link href="http://vizio360.github.com/atom.xml" rel="self"/>
   <link href="http://vizio360.github.com/"/>
-  <updated>2013-03-08T00:31:32+00:00</updated>
+  <updated>2013-03-08T00:45:18+00:00</updated>
   <id>http://vizio360.github.com/</id>
   <author>
     <name><![CDATA[Simone Vicentini]]></name>
@@ -12,5 +12,18 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[hello]]></title>
+    <link href="http://vizio360.github.com/blog/2013/03/08/hello/"/>
+    <updated>2013-03-08T00:33:00+00:00</updated>
+    <id>http://vizio360.github.com/blog/2013/03/08/hello</id>
+    <content type="html"><![CDATA[<h1>Time for blogging!</h1>
+
+<p>Hello blah blah
+cscs
+sadcasdc</p>
+]]></content>
+  </entry>
   
 </feed>
