@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "NPM dependencies"
+title: "NPM dependencies gotcha"
 date: 2013-03-18 12:36
 comments: true
 categories: [nodejs, npm, dependencies]
@@ -45,7 +45,7 @@ in this case when you run "npm install ." from the root folder of your applicati
             -secondNPM
                 -node_modules
 
-# Scenario 2 <- VERIFY THIS ONE!
+# Scenario 2
  - You DON'T have a global installation of coffee-script
  - You have specified ">=1.3.0" as the version of coffee-script required by your application.
  - "secondNPM" has ">=1.3.0" as the version of coffee-script required.
@@ -59,7 +59,7 @@ in this case your application will install the latest available version of coffe
                 -node_modules
 
 # Be more specific with your versions
-I think there is a good blog post by Nodejitsu on the subject, but I think it's good to reiterate on it.
+I think there is a good [blog post by Nodejitsu](http://blog.nodejitsu.com/package-dependencies-done-right) on the subject, but I think it's good to reiterate on it.
 
 If you want to avoid surprises, like discovering in production that your application does not work because the latest version of a dependency breaks your code, always be precise with the version of your dependencies.
 
