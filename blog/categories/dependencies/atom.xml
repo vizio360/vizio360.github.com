@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Vizio]]></title>
-  <link href="http://vizio360.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: dependencies | Vizio]]></title>
+  <link href="http://vizio360.github.com/blog/categories/dependencies/atom.xml" rel="self"/>
   <link href="http://vizio360.github.com/"/>
   <updated>2013-03-18T22:24:04+00:00</updated>
   <id>http://vizio360.github.com/</id>
@@ -18,23 +18,23 @@
     <link href="http://vizio360.github.com/blog/2013/03/18/npm-dependencies/"/>
     <updated>2013-03-18T12:36:00+00:00</updated>
     <id>http://vizio360.github.com/blog/2013/03/18/npm-dependencies</id>
-    <content type="html"><![CDATA[<p>For the last year I&#8217;ve been working with nodejs to create web applications and more often to create dev tools for everyday use.</p>
+    <content type="html"><![CDATA[<p>For the last year I've been working with nodejs to create web applications and more often to create dev tools for everyday use.</p>
 
 <p>NodeJS comes with a pretty simple but really powerful and elegant package manager called NPM. NPM is pretty straight forward to use but now we are facing some slight problems with managing dependencies.</p>
 
 <p>So this is an attempt to explain how NPM dependencies work.</p>
 
-<p>Let&#8217;s start with an example:</p>
+<p>Let's start with an example:</p>
 
 <h1>Context</h1>
 
-<p>You are developing a nodejs application which you wish to distribute as an NPM package. This application uses the coffee-script module which is listed in the &#8220;dependencies&#8221; section of the package.json file as well as another module called &#8220;secondNPM&#8221;.
-&#8220;secondNPM&#8221; uses coffee-script as well so it will be listed in its package.json file.</p>
+<p>You are developing a nodejs application which you wish to distribute as an NPM package. This application uses the coffee-script module which is listed in the "dependencies" section of the package.json file as well as another module called "secondNPM".
+"secondNPM" uses coffee-script as well so it will be listed in its package.json file.</p>
 
 <!-- more -->
 
 
-<p>when you then run &#8220;npm install .&#8221; from the root of YourApp you would expect the following folder structure to be created:</p>
+<p>when you then run "npm install ." from the root of YourApp you would expect the following folder structure to be created:</p>
 
 <pre><code>-YourApp
     -node_modules
@@ -44,7 +44,7 @@
                 -coffee-script
 </code></pre>
 
-<p>Well, that&#8217;s not always the case. There are different scenarios and rules which will apply depending on your global npms and dependencies versioning in your package.json.</p>
+<p>Well, that's not always the case. There are different scenarios and rules which will apply depending on your global npms and dependencies versioning in your package.json.</p>
 
 <h1>Global modules</h1>
 
@@ -56,12 +56,12 @@
 
 <ul>
 <li>You have coffee-script v1.6.0 globally installed.</li>
-<li>You have specified &#8220;>=1.3.0&#8221; as the version of coffee-script required by your application.</li>
-<li>&#8220;secondNPM&#8221; has &#8220;>=1.3.0&#8221; as the version of coffee-script required.</li>
+<li>You have specified ">=1.3.0" as the version of coffee-script required by your application.</li>
+<li>"secondNPM" has ">=1.3.0" as the version of coffee-script required.</li>
 </ul>
 
 
-<p>in this case when you run &#8220;npm install .&#8221; from the root folder of your application, npm will NOT install any local version of coffee-script because the global version satisfies the requirements of both child npms.</p>
+<p>in this case when you run "npm install ." from the root folder of your application, npm will NOT install any local version of coffee-script because the global version satisfies the requirements of both child npms.</p>
 
 <pre><code>-YourApp
     -node_modules
@@ -72,13 +72,13 @@
 <h1>Scenario 2</h1>
 
 <ul>
-<li>You DON&#8217;T have a global installation of coffee-script</li>
-<li>You have specified &#8220;>=1.3.0&#8221; as the version of coffee-script required by your application.</li>
-<li>&#8220;secondNPM&#8221; has &#8220;>=1.3.0&#8221; as the version of coffee-script required.</li>
+<li>You DON'T have a global installation of coffee-script</li>
+<li>You have specified ">=1.3.0" as the version of coffee-script required by your application.</li>
+<li>"secondNPM" has ">=1.3.0" as the version of coffee-script required.</li>
 </ul>
 
 
-<p>in this case your application will install the latest available version of coffee-script in your local application, but then it won&#8217;t install any for the &#8220;secondNPM&#8221; module. This is because the module installed for your application will satisfy the requirements of &#8220;secondNPM&#8221;.</p>
+<p>in this case your application will install the latest available version of coffee-script in your local application, but then it won't install any for the "secondNPM" module. This is because the module installed for your application will satisfy the requirements of "secondNPM".</p>
 
 <pre><code>-YourApp
     -node_modules
@@ -89,7 +89,7 @@
 
 <h1>Be more specific with your versions</h1>
 
-<p>I think there is a good <a href="http://blog.nodejitsu.com/package-dependencies-done-right">blog post by Nodejitsu</a> on the subject, but I think it&#8217;s good to reiterate on it.</p>
+<p>I think there is a good <a href="http://blog.nodejitsu.com/package-dependencies-done-right">blog post by Nodejitsu</a> on the subject, but I think it's good to reiterate on it.</p>
 
 <p>If you want to avoid surprises, like discovering in production that your application does not work because the latest version of a dependency breaks your code, always be precise with the version of your dependencies.</p>
 
@@ -98,13 +98,13 @@
 <h1>Scenario 3</h1>
 
 <ul>
-<li>You DON&#8217;T have a global installation of coffee-script</li>
-<li>You have specified &#8220;1.4.x&#8221; as the version of coffee-script required by your application.</li>
-<li>&#8220;secondNPM&#8221; has &#8220;1.3.x&#8221; as the version of coffee-script required.</li>
+<li>You DON'T have a global installation of coffee-script</li>
+<li>You have specified "1.4.x" as the version of coffee-script required by your application.</li>
+<li>"secondNPM" has "1.3.x" as the version of coffee-script required.</li>
 </ul>
 
 
-<p>In this case you&#8217;ll get the latest 1.4 patched version of coffee-script installed locally in your application, the latest 1.3 patched version of coffee-script installed under &#8220;secondNPM&#8221;.</p>
+<p>In this case you'll get the latest 1.4 patched version of coffee-script installed locally in your application, the latest 1.3 patched version of coffee-script installed under "secondNPM".</p>
 
 <pre><code>-YourApp
     -node_modules
@@ -118,12 +118,12 @@
 
 <ul>
 <li>You have coffee-script v1.4.5 globally installed.</li>
-<li>You have specified &#8220;1.4.x&#8221; as the version of coffee-script required by your application.</li>
-<li>&#8220;secondNPM&#8221; has &#8220;1.3.x&#8221; as the version of coffee-script required.</li>
+<li>You have specified "1.4.x" as the version of coffee-script required by your application.</li>
+<li>"secondNPM" has "1.3.x" as the version of coffee-script required.</li>
 </ul>
 
 
-<p>In this case you won&#8217;t get any version of coffee-script installed locally for your application as the global version satisfies the requirements, but then you will get the latest 1.3 patched version of coffee-script installed under &#8220;secondNPM&#8221;.</p>
+<p>In this case you won't get any version of coffee-script installed locally for your application as the global version satisfies the requirements, but then you will get the latest 1.3 patched version of coffee-script installed under "secondNPM".</p>
 
 <pre><code>-YourApp
     -node_modules

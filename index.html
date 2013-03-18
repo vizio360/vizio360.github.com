@@ -9,10 +9,7 @@
   <meta name="author" content="Simone Vicentini">
 
   
-  <meta name="description" content="Time for blogging! Hello blah blah
-cscs
-sadcasdc
-">
+  <meta name="description" content="For the last year I&#8217;ve been working with nodejs to create web applications and more often to create dev tools for everyday use. NodeJS comes &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,7 +74,7 @@ sadcasdc
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/03/08/hello/">Hello</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/03/18/npm-dependencies/">NPM Dependencies Gotcha</a></h1>
     
     
       <p class="meta">
@@ -93,22 +90,34 @@ sadcasdc
   
 
 
-<time datetime="2013-03-08T00:33:00+00:00" pubdate data-updated="true">Mar 8<span>th</span>, 2013</time>
+<time datetime="2013-03-18T12:36:00+00:00" pubdate data-updated="true">Mar 18<span>th</span>, 2013</time>
         
-         | <a href="/blog/2013/03/08/hello/#disqus_thread">Comments</a>
+         | <a href="/blog/2013/03/18/npm-dependencies/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><h1>Time for blogging!</h1>
+  <div class="entry-content"><p>For the last year I&#8217;ve been working with nodejs to create web applications and more often to create dev tools for everyday use.</p>
 
-<p>Hello blah blah
-cscs
-sadcasdc</p>
+<p>NodeJS comes with a pretty simple but really powerful and elegant package manager called NPM. NPM is pretty straight forward to use but now we are facing some slight problems with managing dependencies.</p>
+
+<p>So this is an attempt to explain how NPM dependencies work.</p>
+
+<p>Let&#8217;s start with an example:</p>
+
+<h1>Context</h1>
+
+<p>You are developing a nodejs application which you wish to distribute as an NPM package. This application uses the coffee-script module which is listed in the &#8220;dependencies&#8221; section of the package.json file as well as another module called &#8220;secondNPM&#8221;.
+&#8220;secondNPM&#8221; uses coffee-script as well so it will be listed in its package.json file.</p>
+
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/03/18/npm-dependencies/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -127,7 +136,7 @@ sadcasdc</p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/03/08/hello/">hello</a>
+        <a href="/blog/2013/03/18/npm-dependencies/">NPM dependencies gotcha</a>
       </li>
     
   </ul>
