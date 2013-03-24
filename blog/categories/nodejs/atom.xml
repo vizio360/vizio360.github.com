@@ -4,7 +4,7 @@
   <title><![CDATA[Category: nodejs | Vizio]]></title>
   <link href="http://vizio360.github.com/blog/categories/nodejs/atom.xml" rel="self"/>
   <link href="http://vizio360.github.com/"/>
-  <updated>2013-03-24T22:35:40+00:00</updated>
+  <updated>2013-03-24T22:42:00+00:00</updated>
   <id>http://vizio360.github.com/</id>
   <author>
     <name><![CDATA[Simone Vicentini]]></name>
@@ -28,8 +28,8 @@
 
 <h1>Context</h1>
 
-<p>You are developing a nodejs application which you wish to distribute as an NPM package. This application uses the coffee-script module which is listed in the "dependencies" section of the package.json file as well as another module called "secondNPM".
-"secondNPM" uses coffee-script as well so it will be listed in its package.json file.</p>
+<p>You are developing a nodejs application which you wish to distribute as an NPM package. This application uses the coffee-script module which is listed in the "dependencies" section of the <code>package.json</code> file as well as another module called "secondNPM".
+"secondNPM" uses coffee-script as well so it will be listed in its <code>package.json</code> file.</p>
 
 <!-- more -->
 
@@ -44,7 +44,7 @@
                 -coffee-script
 </code></pre>
 
-<p>Well, that's not always the case. There are different scenarios and rules which will apply depending on the dependencies versioning in your package.json.</p>
+<p>Well, that's not always the case. There are different scenarios and rules which will apply depending on the dependencies versioning in your <code>package.json</code>.</p>
 
 <h1>">=" version selector</h1>
 
@@ -69,7 +69,7 @@
 
 <p>If you want to avoid surprises, like discovering in production that your application does not work because the latest version of a dependency breaks your code, always be specific with the version of your dependencies.</p>
 
-<p>So if your application has been developed and tested against coffee-script 1.4.2, there is no harm in specify that exact version in the package.json. On the other hand, if you trust the developer of the npm your app depends on, you can specify your version as 1.4.x. This will ensure that only the latest patched version of the npm will be installed, avoiding minor and major versions to be used instead.</p>
+<p>So if your application has been developed and tested against coffee-script 1.4.2, there is no harm in specify that exact version in the <code>package.json</code>. On the other hand, if you trust the developer of the npm your app depends on, you can specify your version as 1.4.x. This will ensure that only the latest patched version of the npm will be installed, avoiding minor and major versions to be used instead.</p>
 
 <h1>".x" version selector</h1>
 
