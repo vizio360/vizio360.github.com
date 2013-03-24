@@ -122,35 +122,11 @@
                 -coffee-script
 </code></pre>
 
-<p>Well, that&#8217;s not always the case. There are different scenarios and rules which will apply depending on your global npms and dependencies versioning in your package.json.</p>
-
-<h1>Global modules</h1>
-
-<p>With NPM you can decide to install a module globally. That means that the module will be available from all your apps without the need to install it locally in your applications.</p>
-
-<p>Back to the example:</p>
+<p>Well, that&#8217;s not always the case. There are different scenarios and rules which will apply depending on the dependencies versioning in your package.json.</p>
 
 <h1>Scenario 1</h1>
 
 <ul>
-<li>You have coffee-script v1.6.0 globally installed.</li>
-<li>You have specified &#8220;>=1.3.0&#8221; as the version of coffee-script required by your application.</li>
-<li>&#8220;secondNPM&#8221; has &#8220;>=1.3.0&#8221; as the version of coffee-script required.</li>
-</ul>
-
-
-<p>in this case when you run &#8220;npm install .&#8221; from the root folder of your application, npm will NOT install any local version of coffee-script because the global version satisfies the requirements of both child npms.</p>
-
-<pre><code>-YourApp
-    -node_modules
-        -secondNPM
-            -node_modules
-</code></pre>
-
-<h1>Scenario 2</h1>
-
-<ul>
-<li>You DON&#8217;T have a global installation of coffee-script</li>
 <li>You have specified &#8220;>=1.3.0&#8221; as the version of coffee-script required by your application.</li>
 <li>&#8220;secondNPM&#8221; has &#8220;>=1.3.0&#8221; as the version of coffee-script required.</li>
 </ul>
@@ -169,14 +145,13 @@
 
 <p>I think there is a good <a href="http://blog.nodejitsu.com/package-dependencies-done-right">blog post by Nodejitsu</a> on the subject, but I think it&#8217;s good to reiterate on it.</p>
 
-<p>If you want to avoid surprises, like discovering in production that your application does not work because the latest version of a dependency breaks your code, always be precise with the version of your dependencies.</p>
+<p>If you want to avoid surprises, like discovering in production that your application does not work because the latest version of a dependency breaks your code, always be specific with the version of your dependencies.</p>
 
 <p>So if your application has been developed and tested against coffee-script 1.4.2, there is no harm in specify that exact version in the package.json. On the other hand, if you trust the developer of the npm your app depends on, you can specify your version as 1.4.x. This will ensure that only the latest patched version of the npm will be installed, avoiding minor and major versions to be used instead.</p>
 
-<h1>Scenario 3</h1>
+<h1>Scenario 2</h1>
 
 <ul>
-<li>You DON&#8217;T have a global installation of coffee-script</li>
 <li>You have specified &#8220;1.4.x&#8221; as the version of coffee-script required by your application.</li>
 <li>&#8220;secondNPM&#8221; has &#8220;1.3.x&#8221; as the version of coffee-script required.</li>
 </ul>
@@ -191,26 +166,6 @@
             -node_modules
                 -coffee-script (latest 1.3 patched version available)
 </code></pre>
-
-<h1>Scenario 4</h1>
-
-<ul>
-<li>You have coffee-script v1.4.5 globally installed.</li>
-<li>You have specified &#8220;1.4.x&#8221; as the version of coffee-script required by your application.</li>
-<li>&#8220;secondNPM&#8221; has &#8220;1.3.x&#8221; as the version of coffee-script required.</li>
-</ul>
-
-
-<p>In this case you won&#8217;t get any version of coffee-script installed locally for your application as the global version satisfies the requirements, but then you will get the latest 1.3 patched version of coffee-script installed under &#8220;secondNPM&#8221;.</p>
-
-<pre><code>-YourApp
-    -node_modules
-        -secondNPM
-            -node_modules
-                -coffee-script (latest 1.3 patched version available)
-</code></pre>
-
-<p>These are not all the scenarios you can stumble upon, but just some that I encountered and made me think about which strategy I wanted to adopt for my specific case.</p>
 
 <p>Any suggestion/amendment/error please let me know.</p>
 </div>
